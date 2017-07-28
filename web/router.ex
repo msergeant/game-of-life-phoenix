@@ -8,6 +8,6 @@ defmodule GameOfLife.Router do
   scope "/", GameOfLife do
     pipe_through :api
 
-    get "/worlds/next", WorldIterationController, :next
+    post "/worlds/next", WorldIterationController, :next
   end
 end

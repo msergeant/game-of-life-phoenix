@@ -8,10 +8,10 @@ defmodule World do
     %World{}
   end
   def new(live_cells) do
-    %World{ live_cells: live_cells |> Enum.map(&List.to_tuple/1) |> Enum.uniq }
+    %World{ live_cells: live_cells |> Enum.uniq }
   end
 
-  @spec alive?(World, tuple) :: boolean
+  @spec alive?(World, list) :: boolean
   def alive?(world, cell) do
     world |> Map.get(:live_cells) |> Enum.member?(cell)
   end

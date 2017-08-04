@@ -15,4 +15,15 @@ defmodule World do
   def alive?(world, cell) do
     world |> Map.get(:live_cells) |> Enum.member?(cell)
   end
+
+  @spec to_list(World) :: list
+  def to_list(world) do
+    world |> Map.get(:live_cells)
+  end
+
+  @spec next_iteration(World) :: World
+  def next_iteration(world) do
+    world
+    #|> Map.get(:live_cells) |>  Enum.map(&Tuple.to_list/1)
+  end
 end

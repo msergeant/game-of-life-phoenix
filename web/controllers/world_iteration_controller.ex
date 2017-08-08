@@ -5,6 +5,7 @@ defmodule GameOfLife.WorldIterationController do
     next_world = params
     |> Map.get("live_cells")
     |> World.new
+    |> World.next_iteration
     |> World.to_list
 
     render conn, live_cells: next_world
